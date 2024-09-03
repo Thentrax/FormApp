@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/endValueDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valor de Resgate" />
+
+    <TextView
+        android:id="@+id/endValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/startValueDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valor Investido" />
+
+    <TextView
+        android:id="@+id/startValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/startDateDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data de inicio" />
+
+    <TextView
+        android:id="@+id/endDateDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data de resgate" />
+
+</LinearLayout>
