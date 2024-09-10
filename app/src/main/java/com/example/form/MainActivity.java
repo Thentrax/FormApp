@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.util.Calendar;
@@ -31,24 +32,23 @@ public class MainActivity extends Activity {
                 String valueString = value.getText().toString();
                 Float startValue = Float.parseFloat(valueString);
 
-                CalendarView calendarView = findViewById(R.id.calendarView);
+                DatePicker datePicker = findViewById(R.id.datePicker);
 
-                calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-                    @Override
-                    public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.set(year, month, dayOfMonth);
-                        selectedDate = calendar.getTimeInMillis();
-                    }
-                });
+                int day = datePicker.getDayOfMonth();
+                int month = datePicker.getMonth();
+                int year = datePicker.getYear();
+
+                String selectedDate = day + "/" + (month + 1) + "/" + year;
+
+                EditText cdiPercent = findViewById(R.id.cdiPercent);
+                String percentString = cdiPercent.getText().toString();
 
 
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                long initialDate = Calendar.getInstance().getTimeInMillis();
 
                 intent.putExtra("startValue", startValue);
                 intent.putExtra("calendarValue", selectedDate);
-                intent.putExtra("initialDate", initialDate);
+                intent.putExtra("cdiPercent", percentString);
 
 
                 startActivity(intent);
